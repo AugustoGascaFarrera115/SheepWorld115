@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -100,7 +101,7 @@ public class LevelGenerator : MonoBehaviour
                 newPlatform.transform.position = new Vector3(newPlatform.transform.position.x,newPlatform.transform.position.y - blockHeight * 5f,newPlatform.transform.position.z);
 
 
-                //newPlatform.transform.DOLocalMoveY(endPosition, 0.3f).SetDelay(i * 0.1f);
+                newPlatform.transform.DOLocalMoveY(endPosition, 0.3f).SetDelay(i * 0.1f);
             }
 
 
