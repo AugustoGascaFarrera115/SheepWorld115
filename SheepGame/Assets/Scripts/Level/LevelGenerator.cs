@@ -75,6 +75,11 @@ public class LevelGenerator : MonoBehaviour
                 lastPosition = newPlatform.transform.position;
 
                 //instantiate player
+                Vector3 temporalPosition = lastPosition;
+                temporalPosition.y += 0.1f;
+                Instantiate(playerPrefab, temporalPosition, Quaternion.identity);
+
+
                 continue;
             }
 
@@ -98,10 +103,17 @@ public class LevelGenerator : MonoBehaviour
             {
                 float endPosition = newPlatform.transform.position.y;
 
-                newPlatform.transform.position = new Vector3(newPlatform.transform.position.x,newPlatform.transform.position.y - blockHeight * 5f,newPlatform.transform.position.z);
+                newPlatform.transform.position = new Vector3(newPlatform.transform.position.x,newPlatform.transform.position.y - blockHeight * 3f,newPlatform.transform.position.z);
+                print(newPlatform.transform.position.y - blockHeight * 3f);
 
 
                 newPlatform.transform.DOLocalMoveY(endPosition, 0.3f).SetDelay(i * 0.1f);
+            }
+
+
+            if(i < 25)
+            {
+
             }
 
 
